@@ -21,8 +21,8 @@
     "@deepgram/sdk": "^3.11.2",
     "@farar/nodes": "^1.2.1",
     "openai": "^4.89.0",
-    "port_agent": "^1.4.6",
-    "streams-logger": "^1.7.0",
+    "@far-analytics/port-peer": "^1.0.0",
+    "streams-logger": "^3.0.0",
     "telnyx": "^2.0.0",
     "twilio": "^5.8.0",
     "ws": "^8.18.1"
