@@ -10,6 +10,7 @@
       "default": "./dist/index.js"
     }
   },
+  "files": ["dist/**", "README.md", "LICENSE", "package.json"],
   "scripts": {
     "clean": "rm -rf ./dist/*",
     "build": "tsc --build .",
