@@ -1,6 +1,6 @@
 {
   "name": "@far-analytics/dialog",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A modular framework for building VoIP-Agent applications.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -10,7 +10,12 @@
       "default": "./dist/index.js"
     }
   },
-  "files": ["dist/**", "README.md", "LICENSE", "package.json"],
+  "files": [
+    "dist/**",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ],
   "scripts": {
     "clean": "rm -rf ./dist/*",
     "build": "tsc --build .",
