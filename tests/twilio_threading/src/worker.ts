@@ -1,5 +1,5 @@
 import { Agent } from "./agent.js";
-import { CartesiaTTS, DeepgramSTT, TwilioVoIPProxy } from "@farar/dialog";
+import { CartesiaTTS, DeepgramSTT, TwilioVoIPProxy } from "@far-analytics/dialog";
 import {
   DEEPGRAM_API_KEY,
   DEEPGRAM_LIVE_SCHEMA,

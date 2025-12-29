@@ -13,7 +13,7 @@ import {
   TwilioVoIP,
   ElevenlabsTTS,
   TwilioVoIPOpenAIAgent,
-} from "@farar/dialog";
+} from "@far-analytics/dialog";
 import { Agent } from "./agent.js";
 import {
   CARTESIA_SPEECH_OPTIONS,

@@ -1,4 +1,4 @@
-import { CartesiaTTS, ElevenlabsTTS, log, Message, TwilioVoIPOpenAIAgent } from "@farar/dialog";
+import { CartesiaTTS, ElevenlabsTTS, log, Message, TwilioVoIPOpenAIAgent } from "@far-analytics/dialog";
 import { CARTESIA_API_KEY, CARTESIA_SPEECH_OPTIONS, ELEVEN_LABS_API_KEY } from "./settings.js";
 
 export class Agent extends TwilioVoIPOpenAIAgent {

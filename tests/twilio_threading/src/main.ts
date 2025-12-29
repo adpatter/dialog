@@ -2,7 +2,7 @@ import * as https from "node:https";
 import * as fs from "node:fs";
 import { once } from "node:events";
 import * as ws from "ws";
-import { TwilioGateway, log, SyslogLevel, TwilioVoIP, TwilioVoIPWorker } from "@farar/dialog";
+import { TwilioGateway, log, SyslogLevel, TwilioVoIP, TwilioVoIPWorker } from "@far-analytics/dialog";
 import { Worker } from "node:worker_threads";
 import {
   PORT,

@@ -1,5 +1,5 @@
 import { LiveSchema } from "@deepgram/sdk";
-import { Session } from "@farar/dialog";
+import { Session } from "@far-analytics/dialog";
 
 export const {
   DEEPGRAM_API_KEY = "",
