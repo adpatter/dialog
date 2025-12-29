@@ -35,6 +35,12 @@ Dialog adopts the STT–TTS model. It orchestrates communication between the VoI
 
 ## Installation
 
+### Install from NPM
+
+```bash
+npm install @far-analytics/dialog --save
+```
+
 ### Development Installation
 
 These instructions describe how to clone the Dialog repository and build the package.
@@ -76,7 +82,7 @@ npm run watch
 #### Change directory into your package directory and install the package.
 
 ```bash
-npm install @far-analytics/dialog --save
+npm install <path-to-the-dialog-repository> --save
 ```
 
 You should now be able to import Dialog artifacts into your package.
