@@ -30,7 +30,7 @@ cd dialog
 Install the package dependencies.
 
 ```bash
-npm install && npm upgrade
+npm install && npm update
 ```
 
 Build the package.
@@ -85,7 +85,7 @@ cd examples/twilio_voip_openai_agent_threading
 Install the example.
 
 ```bash
-npm install && npm upgrade
+npm install && npm update
 ```
 
 Run the example.
