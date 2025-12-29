@@ -1,6 +1,6 @@
 import { EventEmitter } from "node:events";
 import { VoIP, VoIPEvents } from "../../../interfaces/voip/voip.js";
-import { Agent } from "port_agent";
+import { Peer } from "@far-analytics/port-peer";
 import { Message } from "../../../interfaces/message/message.js";
 import { TranscriptStatus, TwilioMetadata } from "./types.js";
 import { UUID } from "node:crypto";
@@ -10,12 +10,12 @@ export class TwilioVoIPProxy
   extends EventEmitter<VoIPEvents<TwilioMetadata, TranscriptStatus>>
   implements VoIP<TwilioMetadata, TranscriptStatus>
 {
-  protected agent?: Agent;
+  protected peer?: Peer;
   constructor() {
     super();
     if (parentPort) {
-      this.agent = new Agent(parentPort);
-      this.agent.register("propagate", this.propagate);
+      this.peer = new Peer(parentPort);
+      this.peer.register("propagate", this.propagate);
     }
   }
 
@@ -27,38 +27,38 @@ export class TwilioVoIPProxy
   };
 
   public post = (message: Message): void => {
-    void this.agent?.call("post", message).catch((err: unknown) => this.emit("error", err));
+    void this.peer?.call("post", message).catch((err: unknown) => this.emit("error", err));
   };
 
   public abort = (uuid: UUID): void => {
-    void this.agent?.call("abort", uuid).catch((err: unknown) => this.emit("error", err));
+    void this.peer?.call("abort", uuid).catch((err: unknown) => this.emit("error", err));
   };
 
   public hangup = (): void => {
-    void this.agent?.call("hangup").catch((err: unknown) => this.emit("error", err));
+    void this.peer?.call("hangup").catch((err: unknown) => this.emit("error", err));
   };
 
   public transferTo = (tel: string): void => {
-    void this.agent?.call("transferTo", tel).catch((err: unknown) => this.emit("error", err));
+    void this.peer?.call("transferTo", tel).catch((err: unknown) => this.emit("error", err));
   };
 
   public startRecording = async (): Promise<void> => {
-    await this.agent?.call("startRecording").catch((err: unknown) => this.emit("error", err));
+    await this.peer?.call("startRecording").catch((err: unknown) => this.emit("error", err));
   };
 
   public stopRecording = async (): Promise<void> => {
-    await this.agent?.call("stopRecording").catch((err: unknown) => this.emit("error", err));
+    await this.peer?.call("stopRecording").catch((err: unknown) => this.emit("error", err));
   };
 
   public removeRecording = async (): Promise<void> => {
-    await this.agent?.call("removeRecording").catch((err: unknown) => this.emit("error", err));
+    await this.peer?.call("removeRecording").catch((err: unknown) => this.emit("error", err));
   };
 
   public startTranscript = async (): Promise<void> => {
-    await this.agent?.call("startTranscript").catch((err: unknown) => this.emit("error", err));
+    await this.peer?.call("startTranscript").catch((err: unknown) => this.emit("error", err));
   };
 
   public dispose = (): void => {
-    void this.agent?.call("dispose").catch((err: unknown) => this.emit("error", err));
+    void this.peer?.call("dispose").catch((err: unknown) => this.emit("error", err));
   };
 }

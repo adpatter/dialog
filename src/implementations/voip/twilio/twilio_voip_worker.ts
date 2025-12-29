@@ -1,6 +1,6 @@
 import { log } from "../../../commons/logger.js";
 import { Worker } from "node:worker_threads";
-import { Agent } from "port_agent";
+import { Peer } from "@far-analytics/port-peer";
 import { TwilioVoIP } from "./twilio_voip.js";
 
 export interface TwilioVoIPWorkerOptions {
@@ -8,7 +8,7 @@ export interface TwilioVoIPWorkerOptions {
   voip: TwilioVoIP;
 }
 
-export class TwilioVoIPWorker extends Agent {
+export class TwilioVoIPWorker extends Peer {
   protected voip: TwilioVoIP;
 
   constructor({ worker, voip }: TwilioVoIPWorkerOptions) {
